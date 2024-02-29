@@ -13,8 +13,8 @@ import os
 
 APP = ['DoFilm.py']
 DATA_FILES = [os.path.abspath("imgs"),os.path.abspath("rendered"),os.path.abspath("Cum.pkl"), os.path.abspath("custom_params.pkl"), os.path.abspath("Grain_curve.spi1d"), os.path.abspath("imgs.pkl"),os.path.abspath("Inface.pkl"),
-              os.path.abspath("apply_all.py"), os.path.abspath("bg.jpeg"), os.path.abspath("blurs.py"), os.path.abspath("cash_flet.py"), os.path.abspath("cash.py"), os.path.abspath("Distributor.py"), os.path.abspath("Do_film.py"), os.path.abspath("Films.pkl"), 
-                 os.path.abspath("IMG_4799.jpg"), os.path.abspath("Lut.py"), os.path.abspath("names.pkl"), os.path.abspath("Not_multi_funk.py"), os.path.abspath("params.pkl"), os.path.abspath("Presets.pkl"), os.path.abspath("save_params.pkl"), os.path.abspath("Saver.py"),
+              os.path.abspath("apply_all.py"), os.path.abspath("bg.jpeg"), os.path.abspath("blurs.py"), os.path.abspath("cash_flet.py"), os.path.abspath("cash.py"), os.path.abspath("Distributor.py"),  os.path.abspath("Films.pkl"), 
+                 os.path.abspath("IMG_4799.jpg"), os.path.abspath("Lut.py"), os.path.abspath("names.pkl"), os.path.abspath("Not_multi_funk.py"), os.path.abspath("params.pkl"), os.path.abspath("Presets.pkl"), os.path.abspath("save_params.pkl"), 
                   os.path.abspath("slising.py"), os.path.abspath("Grain_orwo500.tif"), os.path.abspath("Zoom.py"),os.path.abspath("Paper.npy")]
 OPTIONS = { 
            "iconfile": "1.png",
