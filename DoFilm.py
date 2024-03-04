@@ -62,6 +62,7 @@ if __name__ == "__main__":
         page.window_prevent_close = True
         page.window_min_height = 600
         page.window_min_width = 1280
+        page.theme_mode = "light"
 
         shirina = page.window_width
         imgs = pkl.load(open("imgs.pkl",'rb'))
@@ -1762,7 +1763,7 @@ if __name__ == "__main__":
 
 
         amplify_grain_txt = ft.Text(" " + str(round(cash_flet.amplify_grain,2)),overflow=ft.TextOverflow.CLIP,width=50,max_lines=1,theme_style=ft.TextThemeStyle.TITLE_SMALL,color=ft.colors.GREY_700)
-        amplify_grain_sld = ft.Slider(min=0.0, max=1,value=0.2, divisions=100, on_change_end=go_go,on_change=amplify_grain_c,expand=True,active_color=ft.colors.GREY_300) 
+        amplify_grain_sld = ft.Slider(min=0.0, max=0.5,value=0.2, divisions=100, on_change_end=go_go,on_change=amplify_grain_c,expand=True,active_color=ft.colors.GREY_300) 
         amplify_grain = ft.Column(controls=[ft.Container(ft.Text("Grain Amplify",),padding=ft.padding.only(left=shirina/50,top=shirina/50)),
                                   ft.Container(key="amplify_grain_sld", on_hover=sldr_hover,content=ft.Row([ amplify_grain_sld ,  ft.Container(amplify_grain_txt,on_click=amplify_grain_c_0,on_hover = on_hover,border_radius=10,bgcolor=ft.colors.WHITE)],spacing=0))
                                   ],spacing=0)    
@@ -1864,9 +1865,9 @@ if __name__ == "__main__":
                                   ],spacing=0)   
         #======bloom_spred==================bloom_spred======================bloom_spred=====================
         def bloom_spred_c_0(e):
-            cash_flet.bloom_spred = 21.0
-            bloom_spred_txt.value =" " + str(round(21.0,1)) 
-            bloom_spred_sld.value = 21.0
+            cash_flet.bloom_spred = 22.0
+            bloom_spred_txt.value =" " + str(round(22.0,1)) 
+            bloom_spred_sld.value = 22.0
             go_go(e)
             tabss.tabs[2].update()
 
@@ -1877,7 +1878,7 @@ if __name__ == "__main__":
 
 
         bloom_spred_txt = ft.Text(" " + str(round(cash_flet.bloom_spred,1)),overflow=ft.TextOverflow.CLIP,width=50,max_lines=1,theme_style=ft.TextThemeStyle.TITLE_SMALL,color=ft.colors.GREY_700)
-        bloom_spred_sld = ft.Slider(min=0.1, max=30.0,value=21.0, divisions=100, on_change_end=go_go,on_change=bloom_spred_c,expand=True,active_color=ft.colors.GREY_300) 
+        bloom_spred_sld = ft.Slider(min=0.1, max=30.0,value=22.0, divisions=100, on_change_end=go_go,on_change=bloom_spred_c,expand=True,active_color=ft.colors.GREY_300) 
         bloom_spred = ft.Column(controls=[ft.Container(ft.Text("Spread",),padding=ft.padding.only(left=shirina/50,top=shirina/50)),
                                   ft.Container(key="bloom_spred_sld", on_hover=sldr_hover,content=ft.Row([ bloom_spred_sld ,  ft.Container(bloom_spred_txt,on_click=bloom_spred_c_0,on_hover = on_hover,border_radius=10,bgcolor=ft.colors.WHITE)],spacing=0))
                                   ],spacing=0) 

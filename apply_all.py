@@ -85,22 +85,22 @@ def apply_film(q_in_film,q_out_film):
             in_img[z][...,0]-=Wb_b/90
             in_img[z][...,1]-=((Wb_b/90)+(Wb_r/90))
             in_img[z][...,2]-=Wb_r/90
-
+            
             #in_img[z]=(((in_img[z]-np.min(in_img[z]))/(np.max(in_img[z])-np.min(in_img[z]))))
             in_img[z]=my_interpolation_trilinear(in_img[z],table=Lut)
             #in_img[z]=table_interpolation(in_img[z],table=Lut,method='Tetrahedral')
             #in_img[z] = np.array(in_img[z],dtype=np.float32)
-            
+            in_img[z]+=(Wb_r+Wb_b)/90
 
             #table=
             """in_img[z][...,0]-=((Wb_b2/90)+(Wb_r2/90))
             in_img[z][...,1]-=Wb_b2/90
             in_img[z][...,2]-=Wb_r2/90"""
-            in_img[z]=(in_img[z]-0.6)+(print_exp/9)+(print_cont/16)
+            in_img[z]=(in_img[z]-0.7)+(print_exp/9)+(print_cont/16)
             if gamma<=1:
-                in_img[z]-=(gamma/9)
+                in_img[z]-=(gamma/18)
             elif gamma>1:
-                in_img[z]-=((gamma**0.66)/9)
+                in_img[z]-=((gamma**0.66)/18)
             #in_img[z]=(in_img[z]-0.6)-(gamma/9)+(print_cont/16)
 
 
@@ -109,13 +109,13 @@ def apply_film(q_in_film,q_out_film):
             #gamma_coef=(1.5**-print_exp/16)*10
 
             '''                         CONTRAST                    '''
-            #if light_compr>=0:
-            #    light_compr = np.power((6-light_compr),3)
-            #elif light_compr<0:
-            #    light_compr = np.power((-6-light_compr),3)
-            #in_img[z]+=zone
-            #in_img[z][in_img[z]>0]=(((light_compr)/(-in_img[z][in_img[z]>0]-(light_compr)))+1)*(light_compr)
-            #in_img[z]-=zone
+            if light_compr>=0:
+                light_compr = np.power((6-light_compr),3)
+            elif light_compr<0:
+                light_compr = np.power((-6-light_compr),3)
+            in_img[z]+=zone
+            in_img[z][in_img[z]>0]=(((light_compr)/(-in_img[z][in_img[z]>0]-(light_compr)))+1)*(light_compr)
+            in_img[z]-=zone
 
             
             #img_contrast=1/(1+(np.power(55,(-in_img[z]))))
