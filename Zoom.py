@@ -82,7 +82,7 @@ def zoom(q_in_zoom,q_out_zoom):
                 zoom_chank[i] = gamma_function(zoom_chank[i],0.4) #gamma 2.5
                 zoom_chank[i] = np.nan_to_num(zoom_chank[i])
 
-                zoom_chank[i]=zoom_chank[i]+(grain_0/30)
+                zoom_chank[i]=zoom_chank[i]+(grain_0/40)
 
 
                 zoom_chank[i][zoom_chank[i]<0]=0
