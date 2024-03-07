@@ -337,22 +337,38 @@ def magic(resolution,uploaded_file,wight_balance, blur_rad, halation, blur_spred
                 
                 tictic = time.time()
                 img_blured-=np.min(img_blured)
-                img_blured/=np.max(img_blured)
+                #img_blured/=np.max(img_blured)
+                img_blured[...,0]*=(1+Wb_r/10)
+                img_blured[...,2]*=(1+Wb_b/10)
+
+                img_blured=(img_blured*(411/np.average(img_blured)))
+                img_blured+=(200-np.min(img_blured))
+                img_blured=(np.log10(img_blured))
+                img_blured=(((img_blured-np.min(img_blured))/(np.max(img_blured)-np.min(img_blured))))
 
                 img_blured/=(np.average(img_blured)*2)
                 #img_blured*=(5**((2+gamma+print_exp)/3))
-                img_blured*=(5**((3+gamma)/3))
+                img_blured*=(5**((2+gamma)/3))
                 
                 img_blured+=1#(np.log(gamma+2.7)-1)
 
                 img_blured=(np.log10(img_blured))
 
+                img_blured-=np.min(img_blured)  
+
+                if np.max(img_blured)>=1:
+                    img_blured/=(np.max(img_blured)/1)
+
+                
+
+                
 
 
-                if np.max(img_blured)>=0.9:
-                    img_blured/=(np.max(img_blured)/0.9)
 
-                #img_blured-=np.min(img_blured)         
+
+
+
+
                 img_blured=np.nan_to_num(img_blured)
 
                 slised_grain = slising.slice_for_filmEm(np.array(prep_grain,dtype=np.float32))
