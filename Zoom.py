@@ -8,7 +8,7 @@ from colour import io
 from numba import njit, prange
 from colour import gamma_function
 import sys
-#sys.frozen = True
+sys.frozen = True
 
 from PIL import Image
 

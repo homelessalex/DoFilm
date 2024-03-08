@@ -63,6 +63,7 @@ if __name__ == "__main__":
         page.window_min_height = 600
         page.window_min_width = 1280
         page.theme_mode = "light"
+        #page.bgcolor = ft.colors.GREY_600
 
         shirina = page.window_width
         imgs = pkl.load(open("imgs.pkl",'rb'))
@@ -2661,7 +2662,7 @@ if __name__ == "__main__":
         grab_style = ft.Row(controls=[  ft.Container(content=ft.ElevatedButton(text="Grab style",on_click=grab_style_c,style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=10),color=ft.colors.GREY_800)),margin=ft.margin.only(0,5,0,5)),
                                         ft.Container(content=ft.ElevatedButton(text="Apply style",on_click=aplply_style,style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=10),color=ft.colors.GREY_800)),margin=ft.margin.only(0,5,0,5))
                             ],alignment=ft.MainAxisAlignment.CENTER)
-        img = ft.Image(src_base64=cash_flet.image_string,fit=ft.ImageFit.FIT_WIDTH,border_radius=10)
+        img = ft.Image(src_base64=cash_flet.image_string,fit=ft.ImageFit.FILL,border_radius=10)
 
 
         tabss = ft.Tabs(tabs=[
