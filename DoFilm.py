@@ -1788,9 +1788,9 @@ if __name__ == "__main__":
                                   ],spacing=0)    
         #======blur_rad==================blur_rad======================blur_rad=====================
         def blur_rad_c_0(e):
-            cash_flet.blur_rad = 1.0
-            blur_rad_txt.value =" " + str(round(1.0,1)) 
-            blur_rad_sld.value = 1.0
+            cash_flet.blur_rad = 1.8
+            blur_rad_txt.value =" " + str(round(1.8,1)) 
+            blur_rad_sld.value = 1.8
             go_go(e)
             tabss.tabs[2].update()
 
@@ -1801,7 +1801,7 @@ if __name__ == "__main__":
 
 
         blur_rad_txt = ft.Text(" " + str(round(cash_flet.blur_rad,1)),overflow=ft.TextOverflow.CLIP,width=50,max_lines=1,theme_style=ft.TextThemeStyle.TITLE_SMALL,color=ft.colors.GREY_700)
-        blur_rad_sld = ft.Slider(min=0.1, max=5.0,value=1.0, divisions=100, on_change_end=go_go,on_change=blur_rad_c,expand=True,active_color=ft.colors.GREY_300) 
+        blur_rad_sld = ft.Slider(min=0.1, max=5.0,value=1.8, divisions=100, on_change_end=go_go,on_change=blur_rad_c,expand=True,active_color=ft.colors.GREY_300) 
         blur_rad = ft.Column(controls=[ft.Container(ft.Text("Radius",),padding=ft.padding.only(left=shirina/50,top=shirina/50)),
                                   ft.Container(key="blur_rad_sld", on_hover=sldr_hover,content=ft.Row([ blur_rad_sld ,  ft.Container(blur_rad_txt,on_click=blur_rad_c_0,on_hover = on_hover,border_radius=10,bgcolor=ft.colors.WHITE)],spacing=0))
                                   ],spacing=0)   
@@ -1826,9 +1826,9 @@ if __name__ == "__main__":
                                   ],spacing=0) 
         #======halation==================halation======================halation=====================
         def halation_c_0(e):
-            cash_flet.halation = 1.7
-            halation_txt.value =" " + str(round(1.7,1)) 
-            halation_sld.value = 1.7
+            cash_flet.halation = 2.0
+            halation_txt.value =" " + str(round(2.0,1)) 
+            halation_sld.value = 2.0
             go_go(e)
             tabss.tabs[2].update()
 
@@ -1839,7 +1839,7 @@ if __name__ == "__main__":
 
 
         halation_txt = ft.Text(" " + str(round(cash_flet.halation,2)),overflow=ft.TextOverflow.CLIP,width=50,max_lines=1,theme_style=ft.TextThemeStyle.TITLE_SMALL,color=ft.colors.GREY_700)
-        halation_sld = ft.Slider(min=1.0, max=3.0,value=1.7, divisions=100, on_change_end=go_go,on_change=halation_c,expand=True,active_color=ft.colors.GREY_300) 
+        halation_sld = ft.Slider(min=1.0, max=3.0,value=2.0, divisions=100, on_change_end=go_go,on_change=halation_c,expand=True,active_color=ft.colors.GREY_300) 
         halation = ft.Column(controls=[ft.Container(ft.Text("Halation",),padding=ft.padding.only(left=shirina/50,top=shirina/50)),
                                   ft.Container(key="halation_sld", on_hover=sldr_hover,content=ft.Row([ halation_sld ,  ft.Container(halation_txt,on_click=halation_c_0,on_hover = on_hover,border_radius=10,bgcolor=ft.colors.WHITE)],spacing=0))
                                   ],spacing=0) 

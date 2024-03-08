@@ -80,14 +80,13 @@ def apply_film(q_in_film,q_out_film):
 
 
         for z in in_img:
-            tic = time.time()
+
             #in_img[z][...,0]-=Wb_b/90
             #in_img[z][...,1]-=((Wb_b/90)+(Wb_r/90))
             #in_img[z][...,2]-=Wb_r/90
             in_img[z] = RGB_to_HSL(in_img[z])
             in_img[z][...,1] = ((1/(1+(np.power(200,(-in_img[z][...,1])))))-0.5)*0.9
-            toc = time.time()
-            print(toc-tic)
+
             in_img[z] = HSL_to_RGB(in_img[z])
 
             
@@ -103,9 +102,9 @@ def apply_film(q_in_film,q_out_film):
             in_img[z][...,2]-=Wb_r2/90"""
             in_img[z]=(in_img[z]-0.7)+(print_exp/9)+(print_cont/16)
             if gamma<=1:
-                in_img[z]-=(gamma/18)
+                in_img[z]-=(gamma/9)
             elif gamma>1:
-                in_img[z]-=((gamma**0.66)/18)
+                in_img[z]-=((gamma**0.66)/9)
             #in_img[z]=(in_img[z]-0.6)-(gamma/9)+(print_cont/16)
 
 

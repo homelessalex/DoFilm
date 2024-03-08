@@ -73,9 +73,9 @@ wbb = 0.0
 
 amplify_grain = 0.2
 amplify_mask = 7.0
-blur_rad = 1.0
+blur_rad = 1.8
 blur_spred = 9.0
-halation = 1.7
+halation = 2.0
 bloom_rad = 140
 bloom_spred = 22.0
 bloom_Halation = 1.0

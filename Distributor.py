@@ -53,6 +53,7 @@ def magic(resolution,uploaded_file,wight_balance, blur_rad, halation, blur_spred
             r_scan,b_scan,amplify_grain,amplify_mask,on_grain,white_point,is_half,rotate,aspect): #, bloom_rad, bloom_Halation, bloom_spred, r_hue, r_sut, r_g, r_b, g_hue, g_sut, g_r, g_b, b_hue, b_sut, b_r, b_g, camera, film, accuracy, sut, END_A_PLUS, END_A_MINUS, END_B_PLUS, END_B_MINUS, a_min_sut, a_plus_sut, b_min_sut, b_plus_sut, a_m_hue, a_p_hue, b_m_hue, b_p_hue, sut_compress, steepness_shad, width_shad, steepness_light, width_light, shad_a, shad_b, mid_a, mid_b, light_a, light_b, neutral_mask, amply_wheel, gamma, sharp_rad, sharp_spred, sharp_amplif, WB_b, WB_r, print_cont, print_exp, light_compr, WB_r2, WB_b2, zone, AMPLIFY_GRAIN, AMPLIFY_GRAIN_MASK):
         #if __name__ == '__main__':
                 
+
                 cash.q_in_blur.join()
                 cash.q_in_zoom.join()
                 cash.q_out_zoom.join()
@@ -356,8 +357,8 @@ def magic(resolution,uploaded_file,wight_balance, blur_rad, halation, blur_spred
 
                 img_blured-=np.min(img_blured)  
 
-                if np.max(img_blured)>=1:
-                    img_blured/=(np.max(img_blured)/1)
+                if np.max(img_blured)>=0.9:
+                    img_blured/=(np.max(img_blured)/0.9)
 
                 
 
@@ -382,6 +383,10 @@ def magic(resolution,uploaded_file,wight_balance, blur_rad, halation, blur_spred
                 film_slices_keys = slised_for_film[1]
                 shape = slised_for_film[2]
                 threads = slised_for_film[3]
+                
+                if "scan" in film:
+                     print_cont+=0.3
+                     print_exp+=1.5
 
                 
                 for f in film_slices:
