@@ -357,8 +357,8 @@ def magic(resolution,uploaded_file,wight_balance, blur_rad, halation, blur_spred
 
                 img_blured-=np.min(img_blured)  
 
-                if np.max(img_blured)>=0.9:
-                    img_blured/=(np.max(img_blured)/0.9)
+                if np.max(img_blured)>=1:
+                    img_blured/=(np.max(img_blured))
 
                 
 

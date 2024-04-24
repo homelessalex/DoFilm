@@ -1970,6 +1970,7 @@ if __name__ == "__main__":
             ft.Radio(value="org", label="Original" ),
             ft.Radio(value=[1.4,1], label="A Size" ),
             ft.Radio(value=[4.02,3], label="4/3"),
+            ft.Radio(value=[5,4], label="5/4"),
             ft.Radio(value=[7,6], label="7/6"),
             ft.Radio(value=[1,1], label="1/1")],wrap=True,tight=True),on_change=aspect_c, value="org")
         
