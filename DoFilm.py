@@ -44,12 +44,13 @@ if __name__ == "__main__":
                     active = active_children()
                     for child in active:
                         child.kill()
-                    for child in active:
-                        child.join()
+                    #for child in active:
+                    #    child.join()
                     active = active_children()
                     print(active)
-                    os.system("pkill  python")
                     page.window_destroy()
+                    os.system("pkill  python")
+                    
                     os._exit(1)
                     
         

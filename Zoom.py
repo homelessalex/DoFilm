@@ -119,6 +119,8 @@ def raw(raw_in,WB,is_half) -> np.array:
                                 use_camera_wb=cam, use_auto_wb=auto, highlight_mode=rawpy.HighlightMode(0),#user_wb=(1,1,1,1),
                                 output_bps=16,  no_auto_scale=False, no_auto_bright=False,auto_bright_thr=0.000000001,
                                 gamma=(1.0,4.5), chromatic_aberration=(1,1),)
+    print(np.shape(rgb), "before stack")
     rgb=np.dstack((rgb[:,:,0],rgb[:,:,1],rgb[:,:,2]))
+    print(np.shape(rgb), "after stack")
     rgb = io.convert_bit_depth(rgb,"float32")
     return rgb
